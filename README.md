@@ -19,3 +19,18 @@ To summarize the highlights of IF:
 * Support analyzing and comparing the model(s) performance
 * Support various optimization approaches
 * Support model packaging that is useable across the enterprise
+
+## Data Management
+
+Can support both explicit rating data and implicit rating data
+* Explicit rating data require users to indicate their interests proactively. However, explicit rating data are not always readily available as many users may be reluctant to rate products
+* Implicit rating data are often readily available since they are mainly connected with users’ implicit behaviors. For example, purchase history, browsing history, mouse clicks etc.
+* As such, many recommender models are centered on implicit rating data which indirectly reflects user’s opinion through observing user behavior
+Can support various data splitting schemes
+* Generate training set and test set for model evaluation (accuracy metrics)
+* Generate leave-one-out (LOO) training set, test set and anti-test set for model evaluation (ranking metrics)
+* Generate full training set and anti-test set for evaluation (diversity metrics) and training/prediction
+* Generate user-specific anti-test set for prediction
+A dataset module is designed and developed to manage data for recommender models (dataset.py)
+* The module is built on top of Surprise excellent data management tools to meet all requirements above
+* The module provides functions including setRankings, setCatalog, getRankings, getCatalog, getFullTrainset, gettTrainset, getTestset, getLOOTrainset, getLOOTestset, getFullAntiTestset, getLOOAntiTestset, getSimilarity
