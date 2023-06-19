@@ -65,3 +65,13 @@ Can support various optimization approaches
 * Pointwise: considers a single interaction at a time and train a classifier or a regressor to predict individual preferences (Matrix Factorization, AutoRec)
 * Pairwise: considers a pair of items for each user and aim to approximate the optimal ordering for that pair. Usually, pairwise approaches are more suitable for the ranking task (BPR, NeuMF)
 * Listwise: approximates the ordering of the entire list of items; more complex and compute-intensive.
+
+## Model Deployment
+
+Can support model packaging that is useable across the enterprise
+* Set best tuned hyperparameters as default parameter to the model
+* Create a wrapper to encapsulate the model, expose fewer hyperparameters to user
+* Allow user to adjust hyperparameters when needed
+* Allow user to train the model using a predefined data format
+* Extract data for a given customer ID from input data automatically, and
+* Export the top-n recommendations for this given customer ID
