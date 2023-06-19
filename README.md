@@ -47,3 +47,21 @@ Can support various recommendation tasks
 * Integration of DNN into ratings prediction based on the explicit rating data (AutoRec)
 * Integration of DNN into item rankings based on the implicit rating data (BPR, NeuMF)
 
+## Model Evaluation
+
+Can support model evaluation metrics for various recommendation tasks
+* Three categories of model evaluation metrics are used for various recommendation tasks:
+  * Accuracy Metrics: MAE, RMSE, Precision, Recall
+  * Ranking Metrics: Hit Rate (HR), CHR, RHR, MRR, MAP, nDCG
+  * Diversity Metrics: Coverage, Diversity, Novelty, Serendipity
+* MAE and RMSE are often used for explicit rating data
+* Ranking metrics are often used for implicit rating data
+
+Can support analyzing and comparing the model(s) performance
+* Support analyzing one single model via tuning hyperparameters
+* Support comparing multiple models through specified metrics
+
+Can support various optimization approaches
+* Pointwise: considers a single interaction at a time and train a classifier or a regressor to predict individual preferences (Matrix Factorization, AutoRec)
+* Pairwise: considers a pair of items for each user and aim to approximate the optimal ordering for that pair. Usually, pairwise approaches are more suitable for the ranking task (BPR, NeuMF)
+* Listwise: approximates the ordering of the entire list of items; more complex and compute-intensive.
